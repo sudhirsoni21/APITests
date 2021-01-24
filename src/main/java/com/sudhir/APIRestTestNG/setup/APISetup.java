@@ -25,9 +25,9 @@ public class APISetup {
 	
 	public static ConfigProperty configProperty;
 	public static ExtentReports extentReport;
-	public static ExcelReader excel = new ExcelReader(System.getProperty("user.dir") + "/src/test/resources/testData/TestData.xlsx");
-	public static ThreadLocal<ExtentTest> classLevelLog = new ThreadLocal<ExtentTest>();
-	public static ThreadLocal<ExtentTest> testLevelLog = new ThreadLocal<ExtentTest>();
+	public static ExcelReader excel = new ExcelReader(System.getProperty("user.dir") + "/src/test/resources/testData/APITestData.xlsx");
+	protected static ThreadLocal<ExtentTest> classLevelLog = new ThreadLocal<ExtentTest>();
+	protected static ThreadLocal<ExtentTest> testLevelLog = new ThreadLocal<ExtentTest>();
 	
 	@BeforeSuite
 	public void beforeSuite() {
@@ -45,21 +45,21 @@ public class APISetup {
 	
 	@BeforeMethod
 	public void beforeMethod(Method method) {
-		ExtentTest test = classLevelLog.get().createNode(method.getName());
+		/*ExtentTest test = classLevelLog.get().createNode(method.getName());
 		testLevelLog.set(test);		
-		testLevelLog.get().info("Test Case :- " + method.getName() + " execution started");
+		testLevelLog.get().info("Test Case :- " + method.getName() + " execution started");*/
 	}
 	
 	@AfterMethod
 	public void afterMethod(ITestResult result, Method method) {
-		if (result.getStatus()==ITestResult.SUCCESS) {
+		/*if (result.getStatus()==ITestResult.SUCCESS) {
 			testLevelLog.get().pass("Test Case :- " +method.getName()+ " is passed");
 		} else if (result.getStatus()==ITestResult.FAILURE) {
 			testLevelLog.get().fail("Test Case :- " +method.getName()+ " is failed");
 		} else if (result.getStatus()==ITestResult.SKIP) {
 			testLevelLog.get().skip("Test Case :- " +method.getName()+ " is skipped");
 		}
-		extentReport.flush();
+		extentReport.flush();*/
 	}
 	
 	@AfterSuite

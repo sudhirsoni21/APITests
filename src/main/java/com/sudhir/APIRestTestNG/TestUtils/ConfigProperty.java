@@ -26,4 +26,7 @@ public interface ConfigProperty extends Config {
 	@Key("testReportPath")
 	String getTestReportPath();
 	
+	@Key("testDataSheetName")
+	String getTestDataSheet();
+	
 }

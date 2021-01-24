@@ -23,7 +23,7 @@ public class TestCreateCustomerAPI extends APISetup{
 	 * 			balance - 
 	 * Authorize - sk_test_51I4UOLJxcDcx8HbOuT7oCE1RKESqR094xYVT6e0qF4HyrF8KLv5TznxLq7Mda1lIlcSovJThgn8zm6StGOlywoj3008kvN5hxO
 	 */
-	@Test(dataProviderClass = DataProviderClass.class, dataProvider="dp", enabled=false)
+	@Test(dataProviderClass = DataProviderClass.class, dataProvider="dp")
 	public void validateCreateCustomerAPI(Hashtable<String, String> data) {
 		testLevelLog.get().assignAuthor("Sudhir");
 		testLevelLog.get().assignCategory("Regression");
